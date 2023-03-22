@@ -22,7 +22,6 @@ const port = process.env.PORT || 8080;
 app.use(express.json());
 app.use(cors());
 app.get("/users/:id", async (req, res) => {
-  console.log("here:", req.params.id);
   try {
     const user = await User.findOne({ id: req.params.id });
     if (!user) throw new Error();
